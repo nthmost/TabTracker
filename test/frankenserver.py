@@ -1,4 +1,9 @@
 #!/usr/bin/python
+
+# SIMPLE SERVER FOR TESTING PURPOSES ONLY!
+#  Not meant to be developed further, but will be subject to small modifications
+#  as testing needs change. --nthmost 
+
 import SocketServer
 import SimpleHTTPServer
 
@@ -29,8 +34,11 @@ class FrankenServer(SimpleHTTPServer.SimpleHTTPRequestHandler):
       print "OPTIONS request"
 
    def do_PUT(self):
-      print "PUT request"
-
+      if self.path == "/tab":
+         print "PUT got a tab event!"
+      elif self.path == "/window":
+         print "PUT got a window event!"
+      return
 
 def main():
    try:
