@@ -1,4 +1,0 @@
-TabTracker
-==========
-
-it tracks tabs
