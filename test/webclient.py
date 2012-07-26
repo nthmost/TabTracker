@@ -9,6 +9,7 @@ print blah.status, blah.reason
 conn.close()
 
 
+conn = httplib.HTTPConnection("localhost:8080")
 conn.request("PUT", "/window")
 blah = conn.getresponse()
 print blah.status, blah.reason
