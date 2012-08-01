@@ -7,6 +7,7 @@
 import SocketServer
 import SimpleHTTPServer
 
+HOST = '173.255.251.10'
 PORT = 8080
 
 class FrankenServer(SimpleHTTPServer.SimpleHTTPRequestHandler):
@@ -34,15 +35,28 @@ class FrankenServer(SimpleHTTPServer.SimpleHTTPRequestHandler):
       print "OPTIONS request"
 
    def do_PUT(self):
-      if self.path == "/tab":
-         print "PUT got a tab event!"
-      elif self.path == "/window":
-         print "PUT got a window event!"
-      return
+      if self.path=="/":
+          self.send_response(200)
+          self.send_header('Content-type','text/html')
+          self.end_headers()
+          self.wfile.write("aspdoiapsdif")
+          return
+      else:
+         self.send_response(201)
+         self.send_header('Content-type','text/html')
+         self.end_headers()
+         return
+
+
+      #if self.path == "/tab":
+      #   print "PUT got a tab event!"
+      #elif self.path == "/window":
+      #   print "PUT got a window event!"
+      #return
 
 def main():
    try:
-       httpd = SocketServer.ThreadingTCPServer(('localhost', PORT),FrankenServer)
+       httpd = SocketServer.ThreadingTCPServer((HOST, PORT),FrankenServer)
 
        print "serving on port", PORT
        httpd.serve_forever()
