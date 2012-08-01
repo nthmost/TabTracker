@@ -1,8 +1,8 @@
 // TabTracker for Chrome (extension)
 // background.js
 
-//var EVENT_SEND_METHOD = "PUT";
-var EVENT_SEND_METHOD = "GET";
+var EVENT_SEND_METHOD = "PUT";
+//var EVENT_SEND_METHOD = "GET";
 var EVENT_SEND_HOST = "http://nthmost.net:8080";
 //var EVENT_SEND_HOST = "http://localhost:8080";
 
