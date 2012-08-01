@@ -1,0 +1,14 @@
+{
+  "name": "TabTracker",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "makes the browser crash",
+  "browser_action": {"default_icon": "icon.png"},
+  "background": { "scripts": ["background.js"]},
+  "permissions": [
+     "tabs",
+     "bookmarks",
+     "http://nthmost.net:8080/*",
+     "http://*/*",
+     "unlimitedStorage" ]
+}
