@@ -2,15 +2,11 @@
 
 import httplib
 
-conn = httplib.HTTPConnection("localhost:8080")
+TARGET_HOST = "http://nthmost.net:8080"
+
+conn = httplib.HTTPConnection(TARGET_HOST)
 conn.request("PUT", "/tab")
 blah = conn.getresponse()
 print blah.status, blah.reason
 conn.close()
-
-
-conn = httplib.HTTPConnection("localhost:8080")
-conn.request("PUT", "/window")
-blah = conn.getresponse()
-print blah.status, blah.reason
 
