@@ -8,7 +8,7 @@ import SocketServer
 #import sqlite3 as lite
 
 HOST = 'localhost'
-PORT = '8080'
+PORT = 8080
 #con = sqlite3.connect(storage.db)
 #cur = con.cursor()
 
@@ -53,7 +53,6 @@ class MainServer(SimpleHTTPServer.SimpleHTTPRequestHandler): # (This contains th
 			return
 
 def main():
-   print "main"
    try:
        httpd = SocketServer.ThreadingTCPServer((HOST, PORT),MainServer)
 
